@@ -97,7 +97,7 @@ public class lab3 {
     public static void generateOwnership() {
         try {
             PrintWriter writer = new PrintWriter("ownership.sql", "UTF-8");
-            int id = 3;
+            int id = 4;
             BigInteger number = new BigInteger("1000000000000000");
 
             for(int i = 0; i < 1000; i++) {
@@ -148,9 +148,9 @@ public class lab3 {
         try {
             PrintWriter writer = new PrintWriter("transactions.sql", "UTF-8");
             Random r = new Random();
-            int customerId = r.nextInt(1000) + 3;
+            int customerId = r.nextInt(1000) + 4;
             BigInteger number = idToCreditCardNumber.get(customerId).get(0);
-            int venderId = r.nextInt(100) + 1;
+            int venderId = r.nextInt(100) + 2;
             double amount = (r.nextDouble() * 100) + 20;
 
             for(int i = 0; i < 2000; i++) {
@@ -159,8 +159,8 @@ public class lab3 {
                 writer.println("VALUES (" + customerId + ", \"" + number + "\", " + venderId + ", NOW(), " + amount +");");
                 writer.println();
 
-                customerId = r.nextInt(1000) + 3;
-                venderId = r.nextInt(100) + 1;
+                customerId = r.nextInt(1000) + 4;
+                venderId = r.nextInt(100) + 2;
                 amount = (r.nextDouble() * 100) + 20;
                 number = idToCreditCardNumber.get(customerId).get(0);
             }
